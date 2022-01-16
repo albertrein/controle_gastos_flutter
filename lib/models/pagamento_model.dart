@@ -1,13 +1,23 @@
 class Pagamento{
-  late int pkcodpagamento;
-  late String sigla;
-  late String dtpagamento;
+  late int _pkcodpagamento;
+  late String _sigla;
+  late String _dtpagamento;
 
   Pagamento(
-    this.pkcodpagamento,
-    this.sigla,
-    this.dtpagamento
+    this._pkcodpagamento,
+    this._sigla,
+    this._dtpagamento
   );
 
+  void setPkcodPagamento()
+  void setSigla()
+  void setDtPagamento()
+
+  Map<String, dynamic> toMap(){
+    return {
+      'sigla': _sigla,
+      'dtpagamento': _dtpagamento
+    };
+  }
   
 }
