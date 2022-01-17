@@ -9,9 +9,11 @@ class Pagamento{
     this._dtpagamento
   );
 
-  void setPkcodPagamento()
-  void setSigla()
-  void setDtPagamento()
+  set pkcodpagamento(int newValue) => _pkcodpagamento = newValue;
+
+  set sigla(String newSigla) => sigla = newSigla;
+  
+  set dtPagamento(String newDtPagamento) =>  _dtpagamento = newDtPagamento;
 
   Map<String, dynamic> toMap(){
     return {
