@@ -15,6 +15,8 @@ class _ConsumacaoPageContent extends State<ConsumacaoPage> {
 
   @override
   Widget build(BuildContext context) {
+    print('Saida >>>>>');
+    print(gastosHelper.dados!['consumacao'][0]['gasto']);
     return Scaffold(
       appBar: AppBar(
         title: Text("Consumos"),
@@ -27,12 +29,12 @@ class _ConsumacaoPageContent extends State<ConsumacaoPage> {
             Padding(
               padding: const EdgeInsets.all(10),
               child: ListView.builder(
-                itemCount: gastosHelper.dados!.length,
-                itemBuilder: (Context, index){
-                  final item = gastosHelper.dados!['consumacao'];
+                itemCount: gastosHelper.dados!['consumacao'].length,
+                itemBuilder: (context, index){
+                  final item = gastosHelper.dados!['consumacao'][index];
                   return ListTile(
-                    title: item['gasto'],
-                    subtitle: item['sigla'],
+                    title: Text(item['gasto']),
+                    subtitle: Text(item['sigla']),
                   );
                 }
               ),
