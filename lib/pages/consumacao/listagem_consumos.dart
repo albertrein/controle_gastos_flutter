@@ -15,8 +15,6 @@ class _ConsumacaoPageContent extends State<ConsumacaoPage> {
 
   @override
   Widget build(BuildContext context) {
-    print('Saida >>>>>');
-    print(gastosHelper.dados!['consumacao'][0]['gasto']);
     return Scaffold(
       appBar: AppBar(
         title: Text("Consumos"),
