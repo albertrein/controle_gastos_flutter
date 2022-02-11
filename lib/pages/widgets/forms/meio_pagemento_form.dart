@@ -22,10 +22,10 @@ class MeioPagementoForm extends StatelessWidget{
               children: [
                 const Text('Sigla do meio de pagamento'),
                 Padding(
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   child: TextFormField(
                     keyboardType: TextInputType.number,
-                    validator: (dtVencimentoValue){},
+                    validator: (siglaPagamento) => (siglaPagamento == null || siglaPagamento == ' ')?'Preencha os dados':null,
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.blue,
@@ -41,7 +41,16 @@ class MeioPagementoForm extends StatelessWidget{
                   padding: EdgeInsets.all(20),
                   child: TextFormField(
                     keyboardType: TextInputType.number,
-                    validator: (dtVencimentoValue){},
+                    validator: (dtVencimento) {
+                      if (dtVencimento == null){
+                        return 'Data vencimento não preenchida';
+                      }
+                      int dtVencimentoIntValue = int.parse(dtVencimento);
+                      if (dtVencimentoIntValue < 1 || dtVencimentoIntValue > 31){
+                        return 'Insira o valor corretamente';
+                      }
+                      return null;
+                    },
                     decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.blue,
